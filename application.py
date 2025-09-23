@@ -13,10 +13,9 @@ app = application
 ridge_model = pickle.load(open('models/ridge.pkl','rb'))
 standard_scaler = pickle.load(open('models/scaler.pkl','rb'))
 
-
 @app.route("/")
 def index():
-    return "Flask is running"
+    return "copy this in search baar : /predict_datapoint"
 
 
 @app.route('/predict_datapoint', methods = ['GET','POST'])
