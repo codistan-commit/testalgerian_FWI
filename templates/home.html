@@ -1,23 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWI Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
 <body>
-    <div class="login">
-        <h1>FWI Prediction</h1>
-        <!-- Main Input For Receiving Query to our ML -->
-        <form action="{{ url_for('predict_datapoint') }}" method="post">
-            <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
-            <input type="text" name="RH" placeholder="RH" required="required" /><br>
-            <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
-            <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
-            <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
-            <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
-            <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
-            <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
-            <input type="text" name="Region" placeholder="Region" required="required" /><br>
-
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    <div class="login-container">
+        <h1 class="form-title">FWI Prediction</h1>
+        
+        <form action="{{ url_for('predict_datapoint') }}" method="post" class="form-grid">
+            <input type="text" name="Temperature" placeholder="Temperature" required>
+            <input type="text" name="RH" placeholder="RH" required>
+            <input type="text" name="Ws" placeholder="Ws" required>
+            <input type="text" name="Rain" placeholder="Rain" required>
+            <input type="text" name="FFMC" placeholder="FFMC" required>
+            <input type="text" name="DMC" placeholder="DMC" required>
+            <input type="text" name="ISI" placeholder="ISI" required>
+            <input type="text" name="Classes" placeholder="Classes" required>
+            <input type="text" name="Region" placeholder="Region" required>
+            
+            <button type="submit" class="btn">Predict</button>
         </form>
 
-        <h2>
-            THE FWI prediction is {{result}}
+        <h2 class="result-text">
+            The FWI prediction is {{result}}
         </h2>
     </div>
 </body>
+</html>
